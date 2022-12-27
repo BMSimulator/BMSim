@@ -28,6 +28,8 @@ there is a keyword at the beginning of each line that determines the node operat
 
 (heartbeat generate) ---> the node generates a heartbeat packet, the contents of the columns are the characteristics of this packet. 
 
+(advertise) ---> the node advertises a data packet, the contents of the columns are the characteristics of this packet.
+
 In continuing, the content of each column in log files is specified. 
 
 
@@ -40,6 +42,8 @@ In continuing, the content of each column in log files is specified.
 (generate)    source node    generation time    destination node    squence number
 
 (heartbeat generate)    source node    generation time    destination node    squence number
+
+(advertise)    advertising node    advertising time    source node   squence number      
 -----------------------------------------------------------------------------------------------
 
 if TOTAL_LOG = 0, the main characteristics of packets for calculating performance metrics are logged in the network_detail.log. 
