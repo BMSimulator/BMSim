@@ -7,7 +7,7 @@ BMSim is an open-source and publicly available event-driven Bluetooth mesh netwo
 \Fig{fig:SimulatorArch} shows the general architecture of BMSim and its inner components. A simulation starts by receiving some high-level network specifications from the user. The Initializer module prepares the first snapshot of the node deployment in the specified simulation area according to user wishes. Then the Updater module runs to prepare required inputs for the simulator engine. The updater module runs every update seconds to support network dynamism as well as run-time configuration changes. The \emph{BM simulation engine} is a discrete event simulator, for which the events and their timings are made according to the BLE and BM standard protocols. This engine continues making and processing events until the requested simulation time (Tsim) is reached. The Logger module creates the required output files while the simulation engine is running, and finally calculates and reports various performance indicators of the simulated BM network.
 
 <p align="center">
-  <img src="https://github.com/BMSimulator/BMSim/blob/main/BMSim_architecture.jpg" width="850">
+  <img src="https://github.com/BMSimulator/BMSim/blob/main/BMSim_architecture.jpg" width="950">
 </p>
 
 
