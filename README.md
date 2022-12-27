@@ -1,2 +1,5 @@
 # BMSim
  ## An Event-Driven Simulator for Performance Evaluation of Bluetooth Mesh Networks
+BMSim is a simulation framework for BM networks. the main advantages of BMSim simulator are as follows. BMSim is accurate enough that can be trusted for performance evaluation of BM networks (verified by real experiments). Second, low level details of packet transmission and networking procedures (both medium access and network layers) are truly modeled so that various performance metrics can be estimated. Third, the simulator is modular and flexible so that extensions for inclusion of any channel/radio/mobility/interference models are possible and straightforward. As the last and very important specification, it is possible to configure the network and its parameters during simulation so that dynamic networks with run-time configurations mechanisms can be simulated. 
+
+BMSim is an open-source and publicly available event-driven Bluetooth mesh network simulator. Python is used as the programming language for implementation of the simulator. We first introduce the architecture of the simulator, and then discuss its core operation and user interfaces.
