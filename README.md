@@ -8,7 +8,7 @@ BMSim is an open-source and publicly available event-driven Bluetooth mesh netwo
 ![alt text](https://github.com/BMSimulator/BMSim/blob/main/BMSim_architecture.pdf)
 
 <p align="center">
-  <img src="https://github.com/BMSimulator/BMSim/blob/main/BMSim_architecture.pdf" width="350">
+  <img src="https://github.com/BMSimulator/BMSim/blob/main/BMSim_architecture.jpg" width="350">
 </p>
 
 
