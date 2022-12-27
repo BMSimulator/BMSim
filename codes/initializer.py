@@ -106,8 +106,8 @@ for i_r in range(NUMBER_NODES):
     nodes[i_r].Ntis = 1
     nodes[i_r].Advertise_Interval = 20
     nodes[i_r].GENERATION_INTERVAL = 1000
-    nodes[i_r].Relay_Retransmission_Interval = (nodes[i_r].Rris + 1) * 10 + random.randint(1, 10)
     # Relay_Retransmission_Interval
+    nodes[i_r].Relay_Retransmission_Interval = (nodes[i_r].Rris + 1) * 10 + random.randint(1, 10)
     nodes[i_r].Transmission_Interval = (nodes[i_r].Ntis + 1) * 10 + random.randint(1, 10)  # Transmission_Interval
     ##########Initial value ##############
     nodes[i_r].cache = []
