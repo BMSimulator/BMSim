@@ -1,0 +1,54 @@
+
+the BMSim simulator creates some log files during the simulation. 
+In continuing, the content of each column in the log files is expressed.
+In the first line, the name of the log file is expressed, 
+In the next lines content of each column is specified.   
+
+---------------------------------------------------------------------------------------
+for calculating energy consumption in the network the energy.log is used. 
+
+In continuing, the content of each column in this log file is specified.
+
+source node    scanning time    switching time    transmitting time    sleeping time 
+
+--------------------------------------------------------------------------------------------
+
+if TOTAL_LOG = 1, there are log files as many as the number of nodes. The name of each log file is the node number. 
+the operations of each node with packet characteristics are logged in each node's log file. 
+there is a keyword at the beginning of each line that determines the node operation. In continuing, we explain them.
+
+
+(relay) ----> the node relays a packet, the contents of the columns are the characteristics of this packet.
+
+(main)  ----> the node receives a packet, the contents of the columns are the characteristics of this packet.
+
+(heartbeat)  ---> the node receives a heartbeat packet, the contents of the columns are the characteristics of this packet.
+	
+(generate) ---> the node generates a data packet, the contents of the columns are the characteristics of this packet.
+
+(heartbeat generate) ---> the node generates a heartbeat packet, the contents of the columns are the characteristics of this packet. 
+
+In continuing, the content of each column in log files is specified. 
+
+
+(relay)    Advertising node    source node    receiving time    squence number    generation time    TTL    buffer len 
+
+(main)    source node    squence number    generation time    destination node    receiving time
+
+(heartbeat)    source node    squence number    generation time    destination node    receiving time    minimum hop    maximum hop
+
+(generate)    source node    generation time    destination node    squence number
+
+(heartbeat generate)    source node    generation time    destination node    squence number
+-----------------------------------------------------------------------------------------------
+
+if TOTAL_LOG = 0, the main characteristics of packets for calculating performance metrics are logged in the network_detail.log. 
+
+In continuing, the content of each column in this log file is specified.
+
+source node    destination node    receiving time    squence number    generation time
+------------------------------------------------------------------------------------------------
+
+if TOTAL_LOG = 1, all operations in the network, will be logged in the detail.log file 
+
+------------------------------------------------------------------------------------------------
