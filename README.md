@@ -36,7 +36,7 @@ For calculating energy consumption, the time duration that each node has spent i
 
  
 ### Copyright
-The corresponding manuscript is under review for publication under title: "BMSim: An Event-Driven Simulator for Performance Evaluation of Bluetooth Mesh Networks", authors: Zohreh Hosseinkhani and Majid Nabi. Details for citation of the work will be announced here upon publication. The authors appreiciate proper citation of the article in case the simulator is used for research, education, etc.
+The corresponding manuscript is under review for publication under the title: "BMSim: An Event-Driven Simulator for Performance Evaluation of Bluetooth Mesh Networks", authors: Zohreh Hosseinkhani and Majid Nabi. Details for citation of the work will be announced here upon publication. The authors appreciate proper citation of the article in case the simulator is used for research, education, etc.
 
 
 </div>
