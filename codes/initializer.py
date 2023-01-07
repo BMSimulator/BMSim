@@ -70,7 +70,7 @@ update_flag = 0  # update flag determines the presence of run-time adjustment
 # for parameters and models during the simulation
 BUFFER_SIZE = 6  # the size of the nodes' buffer
 Show_progress_interval = EXECUTION_TIME/100  # the resolution (%) of the simulation progress
-update_mobility_interval = 1000  # The interval for calling the Network_updator module (in milisecond) 
+update_mobility_interval = 6000  # The interval for calling the Network_updator module (in milisecond)
 NETWORK_TTL = NUMBER_NODES  # the initial value for the network's TTL if the user
 # does not want to use the heartbeat message
 #######lowpower and friend #####
