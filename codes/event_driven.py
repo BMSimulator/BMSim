@@ -481,13 +481,10 @@ while True:  # events are executed in order of their time
         scan_event = SCAN37_C_EVENT  # in this event, the next scan event is SCAN37_C_EVENT
         next_Time_scan = all_event[i_node][NODE_TIME]  # in this event, the next scan event time is the current time
         # because the node did not scan as much as the scan window
-        if all_event[i_node][NODE_TIME] == p:  # in this condition, the node is at the end of the scan window
-            nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]  # last_t_scan is used for determining
-            # the time of the next scanning event
-            all_event[i_node][NODE_EVENT] = SCAN38_EVENT  # the next event that this event creates is SCAN38_EVENT
-            # the time of the next scanning event
+        if all_event[i_node][NODE_TIME] == p:
+            scan_event = SCAN38_EVENT
+            nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]
             next_Time_scan = nodes[i_node].last_t_scan + (nodes[i_node].SCAN_INTERVAL - nodes[i_node].SCAN_WINDOW)
-
         heartbeat_time = nodes[i_node].time_heartbeat + nodes[i_node].Heartbeat_period  # the time of the next heartbeat event
         # the time of the next relay event
         relay_Time = nodes[i_node].last_relay_time + nodes[i_node].Advertise_Interval + random.randint(1, 10)
@@ -609,10 +606,15 @@ while True:  # events are executed in order of their time
         nodes[i_node].L_scan = SCAN37_C_EVENT
         # the previous scanning channel is saved for determining the next scanning channel
         if all_event[i_node][NODE_TIME] == p:  # in this condition, the node is at the end of the scan window
-            nodes[i_node].L_scan = SCAN37_C_EVENT/10  # the previous scanning channel is saved for
+            nodes[i_node].L_scan = SCAN37_C_EVENT/10 # the previous scanning channel is saved for
             # determining the next scanning channel
             nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]  # last_t_scan is used for determining
             # the time of the next scanning event
+            # if all_event[i_node][NODE_EVENT] == scan_event:
+            #     all_event[i_node][NODE_EVENT] = SCAN38_EVENT  # the next event that this event creates is SCAN38_EVENT
+            #     # the time of the next scanning event
+            #     next_Time_scan = nodes[i_node].last_t_scan + (nodes[i_node].SCAN_INTERVAL - nodes[i_node].SCAN_WINDOW)
+            #     all_event[i_node][NODE_TIME] = next_Time_scan
         # the event that has minimum time in the events array is chosen as the next event
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]  # the current time of the simulator is updated to the event's time
@@ -735,6 +737,10 @@ while True:  # events are executed in order of their time
         if all_event[i_node][NODE_TIME] == p:
             nodes[i_node].L_scan = SCAN38_C_EVENT/10
             nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]
+            # if all_event[i_node][NODE_EVENT] == scan_event:
+            #     all_event[i_node][NODE_EVENT] = SCAN39_EVENT
+            #     next_Time_scan = nodes[i_node].last_t_scan + (nodes[i_node].SCAN_INTERVAL - nodes[i_node].SCAN_WINDOW)
+            #     all_event[i_node][NODE_TIME] = next_Time_scan
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]
     ####################################################
@@ -855,6 +861,10 @@ while True:  # events are executed in order of their time
         if all_event[i_node][NODE_TIME] == p:
             nodes[i_node].L_scan = SCAN39_C_EVENT/10
             nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]
+            # if all_event[i_node][NODE_EVENT] == scan_event:
+            #     all_event[i_node][NODE_EVENT] = SCAN37_EVENT
+            #     next_Time_scan = nodes[i_node].last_t_scan + (nodes[i_node].SCAN_INTERVAL - nodes[i_node].SCAN_WINDOW)
+            #     all_event[i_node][NODE_TIME] = next_Time_scan
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]
     ##################################################################
