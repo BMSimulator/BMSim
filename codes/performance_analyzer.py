@@ -150,6 +150,7 @@ print("------------------------------------------")
 print("average PDR in the network", network_PDR_mean)
 # the boxplots figure of the nodes' burst packet loss
 df3 = DataFrame(burst_packet_loss_all)
+df3.fillna(0, inplace = True)
 df3 = df3.T
 df3.plot.box(grid='True')
 plt.xlabel("Node Number", fontsize=10)
@@ -178,8 +179,9 @@ plt.savefig('latency_boxplot.pdf', dpi=200)
 
 # the boxplots figure of the nodes' Latency
 df4 = DataFrame(all_latency)
+df4.fillna(0, inplace = True)
 df4 = df4.T
-df4.boxplot(patch_artist=True)
+df4.plot.box(patch_artist=True)
 plt.xlabel("Node Number", fontsize=10)
 plt.ylabel("Latency (ms)", fontsize=10)
 plt.savefig('latency.pdf', dpi=200)
