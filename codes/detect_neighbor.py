@@ -18,5 +18,5 @@ def detect_neighbor(node_source, NODE_RANGE, NUMBER_NODES, nodes, Gar):
             Id1 = nodes[node_source].ID
             if Id2 != Id1:
                 neighbor.append(Id2)
-            Gar.add_edge(Id1, Id2)
+                Gar.add_edge(Id1, Id2)
     return neighbor
