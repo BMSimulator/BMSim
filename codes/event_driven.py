@@ -594,7 +594,7 @@ while True:  # events are executed in order of their time
                     all_event[i_node][NODE_EVENT] = SEND_POLL
                     nodes[i_node].not_receive = 1
                 else:
-                    all_event[i_node][NODE_EVENT] = all_event[i_node][NODE_EVENT]
+                    all_event[i_node][NODE_EVENT] = scan_event
                     next_time = all_event[i_node][NODE_TIME]
         # the next_time variable is the time of the event that has the minimum time        
         if all_event[i_node][NODE_TIME] < next_time:
@@ -610,8 +610,6 @@ while True:  # events are executed in order of their time
         if all_event[i_node][NODE_TIME] == p:  # in this condition, the node is at the end of the scan window
             nodes[i_node].L_scan = SCAN37_C_EVENT/10 # the previous scanning channel is saved for
             # determining the next scanning channel
-            nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]  # last_t_scan is used for determining
-            # the time of the next scanning event
         # the event that has minimum time in the events array is chosen as the next event
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]  # the current time of the simulator is updated to the event's time
@@ -723,7 +721,7 @@ while True:  # events are executed in order of their time
                     all_event[i_node][NODE_EVENT] = SEND_POLL
                     nodes[i_node].not_receive = 1
                 else:
-                    all_event[i_node][NODE_EVENT] = all_event[i_node][NODE_EVENT]
+                    all_event[i_node][NODE_EVENT] = scan_event
                     next_time = all_event[i_node][NODE_TIME]
 
         if all_event[i_node][NODE_TIME] < next_time:
@@ -733,7 +731,6 @@ while True:  # events are executed in order of their time
         nodes[i_node].L_scan = SCAN38_C_EVENT
         if all_event[i_node][NODE_TIME] == p:
             nodes[i_node].L_scan = SCAN38_C_EVENT/10
-            nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]
     ####################################################
@@ -843,7 +840,7 @@ while True:  # events are executed in order of their time
                     all_event[i_node][NODE_EVENT] = SEND_POLL
                     nodes[i_node].not_receive = 1
                 else:
-                    all_event[i_node][NODE_EVENT] = all_event[i_node][NODE_EVENT]
+                    all_event[i_node][NODE_EVENT] = scan_event
                     next_time = all_event[i_node][NODE_TIME]
 
         if all_event[i_node][NODE_TIME] < next_time:
@@ -853,7 +850,6 @@ while True:  # events are executed in order of their time
         nodes[i_node].L_scan = SCAN39_C_EVENT
         if all_event[i_node][NODE_TIME] == p:
             nodes[i_node].L_scan = SCAN39_C_EVENT/10
-            nodes[i_node].last_t_scan = all_event[i_node][NODE_TIME]
         i_node = all_event.index(min((x for x in all_event), key=lambda k: k[0]))
         Time = all_event[i_node][NODE_TIME]
     ##################################################################
