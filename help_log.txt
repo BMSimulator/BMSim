@@ -48,7 +48,7 @@ In continuing, the content of each column in log files is specified.
 
 if TOTAL_LOG = 0, the main characteristics of packets for calculating performance metrics are logged in the network_detail.log. 
 
-In continuing, the content of each column in this log file is specified.
+In continuing, the content of each column in this log file is specified. The number of received packets from each node has been logged at the end of this file in the order of node number.  
 
 source node    destination node    receiving time    squence number    generation time
 ------------------------------------------------------------------------------------------------
