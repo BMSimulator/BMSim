@@ -53,7 +53,7 @@ ENVIRONMENT = 25  # the dimension of the environment (square) i meters that the 
 NUMBER_RELAY_NODE = int(1/3*NUMBER_NODES)  # number of nodes with relay feature in the network
 NUMBER_RELAY_G_NODE = int(1/6*NUMBER_NODES)  # number of nodes with relay and generator features in the network
 NODE_RANGE = 11.26  # the communication range of the nodes, assumin a unit disk model
-EXECUTION_TIME = 30000  # the execution time of the simulator in milliseconds
+EXECUTION_TIME = 10000  # the execution time of the simulator in milliseconds
 #####loging##
 """when TOTAL_LOG is one, each node has a separate log file
  with detailed data about its operations during network simulation. 
@@ -168,7 +168,7 @@ for node_source in range(NUMBER_NODES):
 #########plot network topology##########
 print(nx.info(Gar))
 fig = figure()
-nx.draw(Gar, with_labels=True)
+nx.draw_networkx(Gar, with_labels=True)
 plt.savefig('topology.png', dpi=200, bbox_inches='tight')
 # plt.show()
 ####### static algorithms for determining center node and relay nodes########################

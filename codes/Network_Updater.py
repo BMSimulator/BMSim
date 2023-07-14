@@ -14,7 +14,7 @@ from pylab import plot, show, savefig, xlim, figure, \
                  ylim, legend, boxplot, setp, axes
 from initializer import *
 
-def update_configurations_models(nodes, NUMBER_NODES, NODE_RANGE, NUMBER_RELAY_NODE, NUMBER_RELAY_G_NODE, ENVIRONMENT,Gar):
+def update_configurations_models(reception_ratio,nodes, NUMBER_NODES, NODE_RANGE, NUMBER_RELAY_NODE, NUMBER_RELAY_G_NODE, ENVIRONMENT,Gar):
     global mobility_flag   # mobility flag determines the number of mobility updates during the simulation
     global update_flag  # update flag determines the presence of run-time adjustment for parameters
     # and models during the simulation
@@ -60,7 +60,6 @@ def update_configurations_models(nodes, NUMBER_NODES, NODE_RANGE, NUMBER_RELAY_N
             choice_feature(nodes, i_f, Center_node, Relay_Node, Relay_G_Node)
         #################### run time parameters adjustment ###################
         # BMSim has the capability to adjust some important network parameters during the simulation
-        global BUFFER_SIZE, reception_ratio
         for i_up in range(NUMBER_NODES):
             nodes[i_up].Heartbeat_period = 0
             nodes[i_up].GENERATION_INTERVAL = 1000
@@ -78,4 +77,4 @@ def update_configurations_models(nodes, NUMBER_NODES, NODE_RANGE, NUMBER_RELAY_N
         reception_ratio = [[100 for x in range(NUMBER_NODES)] for y in range(NUMBER_NODES)]
     else:
         Center_node = Center_node_static
-    return nodes, Center_node
+    return nodes, Center_node,reception_ratio

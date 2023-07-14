@@ -38,7 +38,7 @@ while True:  # events are executed in order of their time
         print("progress", round((Time/EXECUTION_TIME)*100, 2))
         Show_progress = Show_progress + Show_progress_interval
     if round(Time) >= next_update:  # the simulator calls the Network_Updator module after each update_mobility_interval
-        nodes, Center_node = update_configurations_models(nodes, NUMBER_NODES, nodes[i_node].NODE_RANGE,
+        nodes, Center_node,reception_ratio = update_configurations_models(reception_ratio,nodes, NUMBER_NODES, nodes[i_node].NODE_RANGE,
                                                           NUMBER_RELAY_NODE, NUMBER_RELAY_G_NODE, ENVIRONMENT, Gar)
         next_update = next_update + update_mobility_interval
     if Time >= EXECUTION_TIME:  # the end of the simulation that is determined by the EXECUTION_TIME
